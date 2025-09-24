@@ -2,10 +2,11 @@ package ie.atu.week2lab;
 
 import org.springframework.web.bind.annotation.*;
 
+
 @RestController
 @RequestMapping
 
-public class RequestController {
+public class  RequestController {
 
     // Getmapping maps the hello URL
     @GetMapping("/hello")
