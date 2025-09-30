@@ -2,6 +2,8 @@ package ie.atu.week2lab;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 
 @RestController
 @RequestMapping
@@ -32,4 +34,14 @@ public class  RequestController {
     public Person getPerson(){
         return new Person("Adam", 25);
     }
+
+    @GetMapping("/calculate")
+    public Object calculate(
+            @RequestParam double num1,
+            @RequestParam double num2,
+            @RequestParam String operation){
+        Calculator calculator = new Calculator();
+        return Map.of("operation", operation, "total",calculator.calculate(num1, num2, operation));
+    }
+
 }
